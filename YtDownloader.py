@@ -18,14 +18,14 @@ def getlinkmp3():
         lank = entry1.get()
         def Download(link):
             youtubeObject = YouTube(link)
-            youtubeObject = youtubeObject.streams.get_highest_resolution()
+            youtubeObject = youtubeObject.streams.filter(only_audio=True).first()
             try:
-                youtubeObject.download(output_path='~/Desktop/Music')
+                youtubeObject.download(output_path=fr'C:\Users\{os.getlogin()}\Downloads')
             except:
                 print("An error has occurred")
             print(fr"{youtubeObject.title} Download is completed successfully")
         Download(lank)
-        os.system(f'start C:/users/{os.getlogin()}/Desktop/~/Desktop')
+        os.system(f'start C:/users/{os.getlogin()}/Downloads')
     except:
         windnot = tkinter.Tk(className='Notification')
         windnot.configure(pady=20, padx=20)
@@ -50,12 +50,12 @@ def getlinkvid():
             youtubeObject = YouTube(link)
             youtubeObject = youtubeObject.streams.get_highest_resolution()
             try:
-                youtubeObject.download(output_path='~/Desktop/Video')
+                youtubeObject.download(output_path=fr'C:\Users\{os.getlogin()}\Downloads')
             except:
                 print("An error has occurred")
             print(fr"{youtubeObject.title} Download is completed successfully")
         Download(lank)
-        os.system(f'start C:/users/{os.getlogin()}/Desktop/~/Desktop')
+        os.system(f'start C:/users/{os.getlogin()}/Downloads')
     except:
         windnot = tkinter.Tk(className='Notification')
         windnot.resizable(False,False)

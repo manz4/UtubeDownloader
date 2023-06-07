@@ -3,8 +3,11 @@ import tkinter
 from pytube import YouTube
 
 #created the windows and names on them
+
 root = tkinter.Tk(className=' BALAK DOWNLOADER')
 root.resizable(False,False)
+icon = tkinter.PhotoImage(file='icon1.png')
+root.iconphoto(False,icon)
 
 def on_leave(buto):
     buto.config(background='darkgreen')
@@ -27,6 +30,7 @@ def getlinkmp3():
         windnot = tkinter.Tk(className='Notification')
         windnot.configure(pady=20, padx=20)
         windnot.resizable(False, False)
+        windnot.iconbitmap('favicon.ico')
 
         def closewindow():
             windnot.destroy()
@@ -56,6 +60,7 @@ def getlinkvid():
         windnot = tkinter.Tk(className='Notification')
         windnot.resizable(False,False)
         windnot.configure(pady=20,padx=20)
+        windnot.iconbitmap('favicon.ico')
         def closewindow():
             windnot.destroy()
         acknoledge = tkinter.Label(windnot,text='Type a Valid Link!!',font=('Times New Roman',20,'bold'))

@@ -6,8 +6,7 @@ from pytube import YouTube
 
 root = tkinter.Tk(className=' BALAK DOWNLOADER')
 root.resizable(False,False)
-icon = tkinter.PhotoImage(file='icon1.png')
-root.iconphoto(False,icon)
+root.iconbitmap('images/favicon.ico')
 
 def on_leave(buto):
     buto.config(background='darkgreen')
@@ -21,23 +20,25 @@ def getlinkmp3():
             youtubeObject = youtubeObject.streams.filter(only_audio=True).first()
             try:
                 youtubeObject.download(output_path=fr'C:\Users\{os.getlogin()}\Downloads')
+                my_file =fr'C:\Users\{os.getlogin()}\Downloads\{youtubeObject.title}.mp4'
+                base = os.path.splitext(my_file)[0]
+                os.rename(my_file,base + '.mp3')
             except:
                 print("An error has occurred")
-            print(fr"{youtubeObject.title} Download is completed successfully")
+            print(fr"{youtubeObject.title} Download finished successfully")
         Download(lank)
         os.system(f'start C:/users/{os.getlogin()}/Downloads')
     except:
         windnot = tkinter.Tk(className='Notification')
         windnot.configure(pady=20, padx=20)
         windnot.resizable(False, False)
-        windnot.iconbitmap('favicon.ico')
+        windnot.iconbitmap('images/favicon.ico')
 
         def closewindow():
             windnot.destroy()
 
         acknoledge = tkinter.Label(windnot, text='Type a Valid Link!!', font=('Times New Roman', 20, 'bold'))
-        notibutton = tkinter.Button(windnot, text='Ok', command=closewindow, font=('Times New Roman', 20, 'bold'),
-                                    bg='red')
+        notibutton = tkinter.Button(windnot, text='Sawa', command=closewindow, font=('Times New Roman', 20, 'bold'),bg='red')
         acknoledge.pack()
         notibutton.pack()
         windnot.mainloop()
@@ -60,11 +61,11 @@ def getlinkvid():
         windnot = tkinter.Tk(className='Notification')
         windnot.resizable(False,False)
         windnot.configure(pady=20,padx=20)
-        windnot.iconbitmap('favicon.ico')
+        windnot.iconbitmap('images/favicon.ico')
         def closewindow():
             windnot.destroy()
         acknoledge = tkinter.Label(windnot,text='Type a Valid Link!!',font=('Times New Roman',20,'bold'))
-        notibutton = tkinter.Button(windnot,text='Ok',command=closewindow,font=('Times New Roman',20,'bold'),bg='red')
+        notibutton = tkinter.Button(windnot,text='Sawa',command=closewindow,font=('Times New Roman',20,'bold'),bg='red')
         acknoledge.pack()
         notibutton.pack()
         windnot.mainloop()
@@ -99,5 +100,6 @@ buton2.place(relx=0.2,rely=0.8,anchor='center')
 root.mainloop()
 
 
-#
+
+
 

@@ -38,7 +38,7 @@ def getlinkmp3():
             windnot.destroy()
 
         acknoledge = tkinter.Label(windnot, text='Type a Valid Link!!', font=('Times New Roman', 20, 'bold'))
-        notibutton = tkinter.Button(windnot, text='Sawa', command=closewindow, font=('Times New Roman', 20, 'bold'),bg='red')
+        notibutton = tkinter.Button(windnot, text='Ok', command=closewindow, font=('Times New Roman', 20, 'bold'),bg='red')
         acknoledge.pack()
         notibutton.pack()
         windnot.mainloop()
@@ -65,7 +65,7 @@ def getlinkvid():
         def closewindow():
             windnot.destroy()
         acknoledge = tkinter.Label(windnot,text='Type a Valid Link!!',font=('Times New Roman',20,'bold'))
-        notibutton = tkinter.Button(windnot,text='Sawa',command=closewindow,font=('Times New Roman',20,'bold'),bg='red')
+        notibutton = tkinter.Button(windnot,text='Ok',command=closewindow,font=('Times New Roman',20,'bold'),bg='red')
         acknoledge.pack()
         notibutton.pack()
         windnot.mainloop()
